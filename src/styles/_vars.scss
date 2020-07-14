@@ -1,0 +1,19 @@
+//breakpoints
+$breakpoints: (
+        xl: 1600px,
+        lg: 1300px,
+        md: 991px,
+        sm: 767px,
+        xs: 575px,
+) !default;
+
+//fonts
+$font-family-base: 'SourceSansPro', sans-serif !default;
+
+//colors
+$primary: #3A91F5 !default;
+$secondary: #F45544 !default;
+
+$black: #272727 !default;
+$white: #fff !default;
+$purple: #A84FD4 !default;

@@ -1,0 +1,11 @@
+@font-face {
+  @include font-face("SourceSansPro", "SourceSansPro-Light", 200, normal);
+}
+
+@font-face {
+  @include font-face("SourceSansPro", "SourceSansPro-Regular", normal, normal);
+}
+
+@font-face {
+  @include font-face("SourceSansPro", "SourceSansPro-SemiBold", 600, normal);
+}
