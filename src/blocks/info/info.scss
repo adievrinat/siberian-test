@@ -17,6 +17,10 @@
     @media (max-width: 991px) {
       max-width: 720px;
     }
+
+    @media (max-width: 575px) {
+      padding: 0 20px;
+    }
   }
 
   &__row {
@@ -44,10 +48,19 @@
       margin: 0 0 30px;
       padding: 0 7px;
     }
+
+    @media (max-width: 575px) {
+      z-index: 2;
+      margin: 0;
+    }
   }
 
   &__content-container {
     display: flex;
+
+    @media (max-width: 767px) {
+      display: block;
+    }
   }
 
   &__title {
@@ -62,6 +75,10 @@
     @media (max-width: 991px) {
       font-size: 2.5rem;
     }
+
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
   &__numbers {
@@ -69,6 +86,16 @@
     width: auto;
     max-width: 35%;
     padding: 0 40px 0 0;
+
+    @media (max-width: 767px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex: 0 0 auto;
+      max-width: 100%;
+      margin: 0 0 40px;
+      padding: 0;
+    }
   }
 
   &__messages {
@@ -80,6 +107,17 @@
 
   &__number {
     margin: 0 0 23px;
+
+    @media (max-width: 767px) {
+      &:not(:first-of-type) {
+        display: none;
+      }
+
+      &:first-of-type {
+        order: 1;
+        margin: 0;
+      }
+    }
 
     &:last-of-type {
       margin: 0 0 48px;
@@ -118,6 +156,11 @@
       width: 130px;
       height: 70px;
     }
+
+    @media (max-width: 767px) {
+      order: 0;
+      margin: 0 20px 0 0;
+    }
   }
 
   .messages-slider {
@@ -137,6 +180,12 @@
       border-left: 24px solid transparent;
       top: 99%;
       right: 58px;
+
+      @media (max-width: 575px) {
+        right: auto;
+        left: 40px;
+        transform: scaleX(-1);
+      }
     }
 
     &__container {
@@ -150,18 +199,31 @@
       transform: translateX(20%);
       transition: transform 0.6s cubic-bezier(.34, .47, .29, 1), opacity 0.8s cubic-bezier(.34, .47, .29, 1);
       padding: 21px 20px 34px 28px;
+
+      @media (max-width: 575px) {
+        padding: 18px 20px 23px;
+      }
     }
 
     &__title-container {
       position: relative;
       margin: 0 0 14px;
       padding: 13px 80px 0 0;
+
+      @media (max-width: 575px) {
+        padding: 0;
+        margin: 0 0 10px;
+      }
     }
 
     &__title {
       @include text-style(1.25rem, 600, 22px, normal, $purple, false);
 
       margin: 0 0 22px;
+
+      @media (max-width: 575px) {
+        display: none;
+      }
     }
 
     &__user {
@@ -177,18 +239,31 @@
 
     &__user-name {
       @include text-style(1rem, 600, 24px, normal, false, false);
+
+      @media (max-width: 575px) {
+        color: #0B276F;
+        font-weight: normal;
+      }
     }
 
     &__icon {
       position: absolute;
       top: 0;
       right: 0;
+
+      @media (max-width: 575px) {
+        display: none;
+      }
     }
 
     &__text-container {
       @include text-style(1rem, normal, 24px, normal, false, -0.5px);
 
       padding: 0 30px 0 0;
+
+      @media (max-width: 575px) {
+        padding: 0;
+      }
     }
 
     &__text {
@@ -213,6 +288,18 @@
       padding: 160px 7px;
     }
 
+    @media (max-width: 575px) {
+      z-index: 1;
+      flex: 0 0 80%;
+      max-width: 80%;
+      padding: 110px 7px;
+    }
+
+    @media (max-width: 400px) {
+      flex: 0 0 95%;
+      max-width: 95%;
+    }
+
     &::before, &::after {
       @include pseudo();
     }
@@ -228,6 +315,14 @@
       @media (max-width: 991px) {
         height: 150px;
       }
+
+      @media (max-width: 575px) {
+        background: transparent url("./public/images/png/info-icons-mobile-1.png") no-repeat right center;
+        background-size: contain;
+        top: -22px;
+        height: 130px;
+        z-index: 1;
+      }
     }
 
     &::after {
@@ -241,11 +336,27 @@
       @media (max-width: 991px) {
         height: 150px;
       }
+
+      @media (max-width: 575px) {
+        background: transparent url("./public/images/png/info-icons-mobile-2.png") no-repeat center center;
+        background-size: contain;
+        height: 130px;
+        z-index: 1;
+      }
     }
   }
 
   &__adding-container {
     padding: 0 0 0 15px;
+
+    @media (max-width: 991px) {
+      padding: 0;
+    }
+
+    @media (max-width: 575px) {
+      position: relative;
+      z-index: 2;
+    }
   }
 
   &__adding-text {
