@@ -10,7 +10,6 @@ class Info {
     this.slider = this.component.querySelector("[data-info-slider]");
     this.slides = this.slider.querySelectorAll(".swiper-slide");
 
-
     this.sliderInit();
 
     Info.instance = this;
