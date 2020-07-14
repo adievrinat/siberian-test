@@ -1,0 +1,7 @@
+.messages-slider {
+  &.messages-slider_init {
+    .messages-slider__slide {
+      transition: transform 0.6s cubic-bezier(.34, .47, .29, 1), opacity 1s cubic-bezier(.34, .47, .29, 1);
+    }
+  }
+}
