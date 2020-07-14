@@ -8,6 +8,7 @@ class Info {
 
     this.component = document.querySelector("[data-info]");
     this.slider = this.component.querySelector("[data-info-slider]");
+    this.slides = this.slider.querySelectorAll(".swiper-slide");
 
 
     this.sliderInit();
@@ -20,7 +21,26 @@ class Info {
     this.swiper = new Swiper(this.slider, {
       slidesPerView: 1,
       spaceBetween: 20,
-      loop: true
+      speed: 0,
+      autoplayDisableOnInteraction: true,
+      virtualTranslate: true,
+      touchRatio: 0,
+      autoplay: {
+        delay: 2500
+      },
+      effect: 'fade',
+      observer: true,
+      observeParents: true,
+      on: {
+        slideChange: function () {
+          if (this.activeIndex === this.slides.length - 1) {
+            setTimeout(() => {
+              this.slideTo(0);
+              this.autoplay.start();
+            }, 2500);
+          }
+        }
+      }
     });
   }
 }
