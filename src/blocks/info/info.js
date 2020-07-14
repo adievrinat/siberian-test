@@ -7,9 +7,11 @@ class Info {
     this.component = document.querySelector("[data-info]");
     this.title = this.component.querySelector("[data-title]");
     this.loadingCls = "info_loading";
+    this.typing = false;
 
     this.animation = () => {
       if (window.innerWidth > 767) {
+        this.typing = true;
         !this.component.classList.contains(this.loadingCls) ? this.component.classList.add(this.loadingCls) : '';
         this.typingText(this.title);
       }
@@ -24,7 +26,9 @@ class Info {
 
   events() {
     window.addEventListener("resize", () => {
-      this.animation();
+      if (!this.typing) {
+        this.animation();
+      }
     });
   }
 
@@ -34,6 +38,8 @@ class Info {
     let symbols = text.split("");
     let length = symbols.length;
     let path = 0;
+
+    textEntry.innerHTML = "";
 
     this.addSymbol(length, path, textEntry, symbols);
   }
