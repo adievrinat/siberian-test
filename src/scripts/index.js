@@ -13,8 +13,8 @@ import Info from "../blocks/info/info";
     }
 
     logics() {
-      new MessagesSlider();
       new Info();
+      new MessagesSlider();
     }
   }
 

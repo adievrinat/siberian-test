@@ -24,6 +24,12 @@
     }
   }
 
+  .info__adding {
+    &::after,
+    &::before {
+      opacity: 1;
+    }
+  }
 
   @keyframes firstBlock {
     0% {

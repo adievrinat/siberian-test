@@ -10,17 +10,17 @@ class MessagesSlider {
 
     this.component.forEach((element) => {
       let slider = element.querySelector(".swiper-container");
-      this.sliderInit(slider);
+      this.sliderInit(element, slider);
     });
 
     MessagesSlider.instance = this;
     return this;
   }
 
-  sliderInit(element) {
+  sliderInit(container, element) {
     let slides = element.querySelectorAll(".swiper-slide");
 
-    new Swiper(element, {
+    let slider = new Swiper(element, {
       slidesPerView: 1,
       spaceBetween: 20,
       speed: 0,
@@ -34,16 +34,30 @@ class MessagesSlider {
       observer: true,
       observeParents: true,
       on: {
+        init: function () {
+          setTimeout(() => {
+            !container.classList.contains("messages-slider_init") ? container.classList.add("messages-slider_init") : "";
+          }, 300);
+        },
         slideChange: function () {
           if (this.activeIndex === slides.length - 1) {
             setTimeout(() => {
               this.slideTo(0);
+
               this.autoplay.start();
             }, 2500);
           }
         }
       }
     });
+
+    if (window.innerWidth > 767) {
+      slider.autoplay.stop();
+
+      setTimeout(() => {
+        slider.autoplay.start();
+      }, 2000);
+    }
   }
 }
 

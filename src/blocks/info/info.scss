@@ -14,7 +14,7 @@
     margin: 0 auto;
     padding: 0 20px;
 
-    @media (max-width: 991px) {
+    @include breakpoint(md) {
       max-width: 720px;
     }
   }
@@ -24,7 +24,7 @@
     flex-wrap: wrap;
     margin: 0 -7px;
 
-    @media (max-width: 991px) {
+    @include breakpoint(md) {
       flex-direction: column;
       align-items: center;
     }
@@ -38,14 +38,14 @@
     width: 100%;
     padding: 95px 7px;
 
-    @media (max-width: 991px) {
+    @include breakpoint(md) {
       flex: 0 0 100%;
       max-width: 100%;
       margin: 0 0 30px;
       padding: 0 7px;
     }
 
-    @media (max-width: 575px) {
+    @include breakpoint(xs) {
       z-index: 2;
       margin: 0;
     }
@@ -54,26 +54,35 @@
   &__content-container {
     display: flex;
 
-    @media (max-width: 767px) {
+    @include breakpoint(sm) {
       display: block;
     }
   }
 
   &__title {
-    @include text-style(2.75rem, 600, 1em, normal, false, false);
+    position: relative;
+
+    @include text-style(2.75rem, 600, 1em, normal, transparent, false);
 
     margin: 0 0 45px;
 
-    @media (max-width: 1300px) {
+    @include breakpoint(lg) {
       font-size: 3.4vw;
     }
 
-    @media (max-width: 991px) {
+    @include breakpoint(md) {
       font-size: 2.5rem;
     }
 
-    @media (max-width: 767px) {
+    @include breakpoint(sm) {
       display: none;
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: $white;
     }
   }
 
@@ -83,7 +92,7 @@
     max-width: 35%;
     padding: 0 40px 0 0;
 
-    @media (max-width: 767px) {
+    @include breakpoint(sm) {
       display: flex;
       justify-content: space-between;
       flex: 0 0 auto;
@@ -104,7 +113,7 @@
     cursor: pointer;
     margin: 0 0 23px;
 
-    @media (max-width: 767px) {
+    @include breakpoint(sm) {
       &:not(:first-of-type) {
         display: none;
       }
@@ -140,12 +149,13 @@
     width: 25px;
     height: 25px;
     object-fit: contain;
+    border-radius: 50%;
   }
 
   &__number-text {
     @include text-style(1rem, 600, 18px, normal, false, false);
 
-    @media (max-width: 767px) {
+    @include breakpoint(sm) {
       display: none;
     }
   }
@@ -155,11 +165,11 @@
 
     @include text-style(1rem, 600, 18px, normal, false, false);
 
-    @media (max-width: 767px) {
+    @include breakpoint(sm) {
       display: inherit;
     }
 
-    @media (max-width: 575px) {
+    @include breakpoint(xs) {
       font-size: 0.875rem;
     }
   }
@@ -169,7 +179,7 @@
     width: 147px;
     height: 80px;
 
-    @media (max-width: 767px) {
+    @include breakpoint(sm) {
       background: transparent url("./public/images/svg/logo-mobile.svg") no-repeat center center;
       background-size: contain;
       width: 100px;
@@ -178,13 +188,13 @@
       margin: 0 20px 0 0;
     }
 
-    @media (max-width: 575px) {
+    @include breakpoint(xs) {
       width: 74px;
       height: 32px;
     }
 
     svg {
-      @media (max-width: 767px) {
+      @include breakpoint(sm) {
         display: none;
       }
     }
@@ -197,13 +207,13 @@
     width: 100%;
     padding: 200px 7px 210px;
 
-    @media (max-width: 991px) {
+    @include breakpoint(md) {
       flex: 0 0 60%;
       max-width: 60%;
       padding: 160px 7px;
     }
 
-    @media (max-width: 575px) {
+    @include breakpoint(xs) {
       z-index: 1;
       flex: 0 0 80%;
       max-width: 80%;
@@ -217,6 +227,13 @@
 
     &::before, &::after {
       @include pseudo();
+
+      opacity: 0;
+      transition: opacity 0.4s ease;
+
+      @include breakpoint(sm) {
+        opacity: 1;
+      }
     }
 
     &::before {
@@ -227,11 +244,11 @@
       width: 100%;
       height: 185px;
 
-      @media (max-width: 991px) {
+      @include breakpoint(md) {
         height: 150px;
       }
 
-      @media (max-width: 575px) {
+      @include breakpoint(xs) {
         background: transparent url("./public/images/png/info-icons-mobile-1.png") no-repeat right center;
         background-size: contain;
         top: -22px;
@@ -247,12 +264,13 @@
       background-size: contain;
       width: 100%;
       height: 185px;
+      transition-delay: 0.3s;
 
-      @media (max-width: 991px) {
+      @include breakpoint(md) {
         height: 150px;
       }
 
-      @media (max-width: 575px) {
+      @include breakpoint(xs) {
         background: transparent url("./public/images/png/info-icons-mobile-2.png") no-repeat center center;
         background-size: contain;
         height: 130px;
@@ -264,11 +282,11 @@
   &__adding-container {
     padding: 0 0 0 15px;
 
-    @media (max-width: 991px) {
+    @include breakpoint(md) {
       padding: 0;
     }
 
-    @media (max-width: 575px) {
+    @include breakpoint(xs) {
       position: relative;
       z-index: 2;
     }
@@ -279,39 +297,26 @@
 
     margin: 0 0 20px;
 
-    @media (max-width: 991px) {
+    @include breakpoint(md) {
       margin: 0 0 25px;
     }
   }
 
   &__adding-button {
-    width: 80%;
+    width: 85%;
 
-    @media (max-width: 1300px) {
+    @include breakpoint(lg) {
       width: 100%;
     }
 
-    @media (max-width: 991px) {
+    @include breakpoint(md) {
       display: block;
       width: 85%;
       margin: 0 auto;
     }
 
-    @media (max-width: 767px) {
+    @include breakpoint(sm) {
       width: 100%;
-    }
-  }
-
-  .swiper-slide {
-    opacity: 0 !important;
-  }
-
-  .swiper-slide-active {
-    opacity: 1 !important;
-
-    .messages-slider__slide {
-      opacity: 1;
-      transform: translateX(0);
     }
   }
 
