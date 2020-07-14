@@ -12,14 +12,10 @@
   &__container {
     max-width: 1095px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 
     @media (max-width: 991px) {
       max-width: 720px;
-    }
-
-    @media (max-width: 575px) {
-      padding: 0 20px;
     }
   }
 
@@ -89,7 +85,6 @@
 
     @media (max-width: 767px) {
       display: flex;
-      align-items: center;
       justify-content: space-between;
       flex: 0 0 auto;
       max-width: 100%;
@@ -106,6 +101,7 @@
   }
 
   &__number {
+    cursor: pointer;
     margin: 0 0 23px;
 
     @media (max-width: 767px) {
@@ -133,6 +129,11 @@
     @include text-style(2.25rem, 600, 35px, normal, false, false);
 
     margin: 0 7px 0 0;
+
+    @media (max-width: 400px) {
+      font-size: 1.8rem;
+      line-height: 30px;
+    }
   }
 
   &__number-icon {
@@ -143,23 +144,49 @@
 
   &__number-text {
     @include text-style(1rem, 600, 18px, normal, false, false);
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__number-text-hidden {
+    display: none;
+
+    @include text-style(1rem, 600, 18px, normal, false, false);
+
+    @media (max-width: 767px) {
+      display: inherit;
+    }
+
+    @media (max-width: 575px) {
+      font-size: 0.875rem;
+    }
   }
 
   &__logo {
     display: block;
-    background: transparent url("./public/images/svg/logo.svg") no-repeat center center;
-    background-size: contain;
     width: 147px;
     height: 80px;
 
-    @media (max-width: 991px) {
-      width: 130px;
-      height: 70px;
-    }
-
     @media (max-width: 767px) {
+      background: transparent url("./public/images/svg/logo-mobile.svg") no-repeat center center;
+      background-size: contain;
+      width: 100px;
+      height: 50px;
       order: 0;
       margin: 0 20px 0 0;
+    }
+
+    @media (max-width: 575px) {
+      width: 74px;
+      height: 32px;
+    }
+
+    svg {
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
   }
 
@@ -180,7 +207,7 @@
       z-index: 1;
       flex: 0 0 80%;
       max-width: 80%;
-      padding: 110px 7px;
+      padding: 110px 7px 60px;
     }
 
     @media (max-width: 400px) {
@@ -286,5 +313,9 @@
       opacity: 1;
       transform: translateX(0);
     }
+  }
+
+  &__battery-block {
+    opacity: 0;
   }
 }
