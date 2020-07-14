@@ -65,11 +65,29 @@
     display: flex;
   }
 
-  &__user-country {
+  &__user-country-container {
     width: 21px;
     height: 21px;
-    object-fit: contain;
     margin: 0 10px 0 0;
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      position: relative;
+      width: 23px;
+      height: 23px;
+    }
+  }
+
+  &__user-country {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   &__user-name {

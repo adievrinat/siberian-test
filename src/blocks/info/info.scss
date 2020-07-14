@@ -258,7 +258,21 @@
   }
 
   &__adding-button {
-    width: 100%;
+    width: 80%;
+
+    @media (max-width: 1300px) {
+      width: 100%;
+    }
+
+    @media (max-width: 991px) {
+      display: block;
+      width: 85%;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
   }
 
   .swiper-slide {

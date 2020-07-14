@@ -1,14 +1,11 @@
 .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
   @include text-style(1rem, 600, 19px, normal, $white, false);
 
+  display: inline-block;
   text-align: center;
   min-height: 50px;
   border-radius: 100px;
-  padding: 5px 30px;
+  padding: 15.5px 30px;
 
   &_red {
     background-color: $secondary;
