@@ -1,5 +1,5 @@
 import '../styles/index.scss';
-import Info from "../blocks/info/info";
+import MessagesSlider from "../blocks/messages-slider/messages-slider";
 
 (function () {
   class Constructor {
@@ -12,7 +12,7 @@ import Info from "../blocks/info/info";
     }
 
     logics() {
-      new Info();
+      new MessagesSlider();
     }
   }
 
