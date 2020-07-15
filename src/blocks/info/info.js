@@ -6,7 +6,6 @@ class Info {
 
     this.component = document.querySelector("[data-info]");
     this.title = this.component.querySelector("[data-title]");
-    this.loadingCls = "info_loading";
     this.typing = false;
 
     this.animation();
@@ -18,20 +17,14 @@ class Info {
 
   events() {
     window.addEventListener("resize", () => {
-      if (!this.typing) {
-        this.animation();
-      }
+      this.animation();
     });
   }
 
   animation() {
-    if (window.innerWidth > 767) {
+    if (!this.typing && window.innerWidth > 767) {
       this.typing = true;
-      !this.component.classList.contains(this.loadingCls) ? this.component.classList.add(this.loadingCls) : '';
-
-      setTimeout(()=> {
-        this.typingText(this.title);
-      }, 700);
+      this.typingText(this.title);
     }
   };
 

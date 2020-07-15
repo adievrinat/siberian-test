@@ -1,6 +1,6 @@
 import '../styles/index.scss';
+import Preloader from "../blocks/preloader/preloader";
 import MessagesSlider from "../blocks/messages-slider/messages-slider";
-import Info from "../blocks/info/info";
 
 (function () {
   class Constructor {
@@ -13,7 +13,7 @@ import Info from "../blocks/info/info";
     }
 
     logics() {
-      new Info();
+      new Preloader();
       new MessagesSlider();
     }
   }

@@ -1,4 +1,6 @@
 @import "../blocks/info/info";
-@import "../blocks/info/_loading/info_loading";
 @import "../blocks/messages-slider/messages-slider";
 @import "../blocks/messages-slider/_init/messages-slider_init";
+@import "../blocks/preloader/preloader";
+@import "../blocks/preloader/_loading/preloader_loading";
+@import "../blocks/preloader/_hide/preloader_hide";
