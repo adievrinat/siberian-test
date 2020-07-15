@@ -10,6 +10,21 @@
   background-color: $primary;
   z-index: 100;
 
+  &__icon-container {
+    width: 400px;
+    height: 185px;
+
+    @include breakpoint(md) {
+      width: 300px;
+      height: 150px;
+    }
+
+    @include breakpoint(sm) {
+      width: 250px;
+      height: 100px;
+    }
+  }
+
   &__icon {
     width: 400px;
     height: 185px;

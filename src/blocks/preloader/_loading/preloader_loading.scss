@@ -1,6 +1,6 @@
 .preloader {
   &_loading {
-    .preloader__icon_animation {
+    .preloader__icon-container_animation {
       transform: scale(50);
       opacity: 0;
       transition: transform 2s ease-out, opacity 0.8s ease-out;

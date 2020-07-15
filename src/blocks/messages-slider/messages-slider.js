@@ -20,7 +20,7 @@ class MessagesSlider {
   sliderInit(container, element) {
     let slides = element.querySelectorAll(".swiper-slide");
 
-    let slider = new Swiper(element, {
+    new Swiper(element, {
       slidesPerView: 1,
       spaceBetween: 20,
       speed: 0,
@@ -35,16 +35,8 @@ class MessagesSlider {
       observeParents: true,
       on: {
         init: function () {
-          if (window.innerWidth > 767) this.autoplay.stop();
-
           setTimeout(() => {
             !container.classList.contains("messages-slider_init") ? container.classList.add("messages-slider_init") : "";
-
-            if (window.innerWidth > 767) {
-              setTimeout(() => {
-                this.autoplay.start();
-              }, 2000);
-            }
           }, 300);
         },
         slideChange: function () {
@@ -58,14 +50,6 @@ class MessagesSlider {
         }
       }
     });
-
-    // if (window.innerWidth > 767) {
-    //   slider.autoplay.stop();
-    //
-    //   setTimeout(() => {
-    //     slider.autoplay.start();
-    //   }, 2000);
-    // }
   }
 }
 

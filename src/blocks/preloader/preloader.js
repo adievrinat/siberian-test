@@ -3,7 +3,7 @@ import Info from "../info/info";
 class Preloader {
   constructor() {
     this.component = document.querySelector("[data-preloader]");
-    this.icon = this.component.querySelector(".preloader__icon");
+    this.icon = document.querySelector(".preloader__icon-container");
 
     setTimeout(() => {
       if (!this.component.classList.contains("preloader_loading")) {
@@ -11,7 +11,7 @@ class Preloader {
 
         if (this.icon) {
           setTimeout(() => {
-            this.icon.classList.add("preloader__icon_animation");
+            this.icon.classList.add("preloader__icon-container_animation");
 
             setTimeout(() => {
               this.component.classList.add("preloader_hide");
