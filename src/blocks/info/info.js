@@ -28,7 +28,10 @@ class Info {
     if (window.innerWidth > 767) {
       this.typing = true;
       !this.component.classList.contains(this.loadingCls) ? this.component.classList.add(this.loadingCls) : '';
-      this.typingText(this.title);
+
+      setTimeout(()=> {
+        this.typingText(this.title);
+      }, 700);
     }
   };
 
