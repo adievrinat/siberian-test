@@ -28,7 +28,7 @@ class MessagesSlider {
       virtualTranslate: true,
       touchRatio: 0,
       autoplay: {
-        delay: 2500
+        delay: 2000
       },
       effect: 'fade',
       observer: true,
@@ -45,7 +45,7 @@ class MessagesSlider {
               this.slideTo(0);
 
               this.autoplay.start();
-            }, 2500);
+            }, 2000);
           }
         }
       }
