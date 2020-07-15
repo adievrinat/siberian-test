@@ -9,14 +9,6 @@ class Info {
     this.loadingCls = "info_loading";
     this.typing = false;
 
-    this.animation = () => {
-      if (window.innerWidth > 767) {
-        this.typing = true;
-        !this.component.classList.contains(this.loadingCls) ? this.component.classList.add(this.loadingCls) : '';
-        this.typingText(this.title);
-      }
-    };
-
     this.animation();
     this.events();
 
@@ -31,6 +23,14 @@ class Info {
       }
     });
   }
+
+  animation() {
+    if (window.innerWidth > 767) {
+      this.typing = true;
+      !this.component.classList.contains(this.loadingCls) ? this.component.classList.add(this.loadingCls) : '';
+      this.typingText(this.title);
+    }
+  };
 
   typingText(element) {
     let text = element.getAttribute('data-title-text');
@@ -47,7 +47,7 @@ class Info {
   addSymbol(length, path, textEntry, symbols) {
     if (length > path) {
       textEntry.innerHTML += symbols[path];
-      path = path + 1;
+      path++;
 
       setTimeout(() => {
         this.addSymbol(length, path, textEntry, symbols);
