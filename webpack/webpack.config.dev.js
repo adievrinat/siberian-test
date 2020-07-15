@@ -60,21 +60,6 @@ module.exports = merge(common, {
           'sass-loader'
         ],
       },
-      // {
-      //   test: /\.(jpg|png)$/,
-      //   use: {
-      //     loader: "url-loader",
-      //     options: {
-      //       limit: 25000,
-      //     },
-      //   },
-      // },
-
-      // {
-      //   test: /\.(png|jpg)$/,
-      //   include: path.join(__dirname, '../src'),
-      //   loader: 'file-loader'
-      // }
     ]
   }
 });
