@@ -35,7 +35,7 @@
     "core-js": "^3.6.5",
     "lodash": "^4.17.15",
     "postcss-loader": "^3.0.0",
-    "swiper": "^4.4.1",
+    "swiper": "^6.5.1",
     "url-loader": "^4.1.0"
   }
 }
